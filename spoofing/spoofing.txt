@@ -1,1 +1,12 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability is that a session id is stored in a cookie, which is used to resume logins. It's possible to steal the session either from an external endpoint defined by an attacker or by an attacker setting  up server endpoints on their own website, and then to spoof the attacker as having the same session id as the user, which lets the attacker log in without the user's credentials.
+
+The secure version protects the cookie from attackers by specifying in the cookie object's settings:
+
+httpOnly: true,
+sameSite: true, 
+
+Making it so that you can't use endpoints that aren't specified in the site server and the only accepted endpoints come from the proper website, meaning that there's no external method to intercept the cookie.
+
+Spoofing violates Confidentiality. The secrets are known to people who shouldn't know them.
