@@ -1,0 +1,7 @@
+Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+Which CIA property does tampering violate?
+What additional security mechanisms can you incorporate?
+
+The vulnerability here is that insecure allows for text input that can be read as code. Secure.js fixes this issue by removing any special characters that would be read as HTML code.
+
+This violates Integrity, the secrets are being changed.

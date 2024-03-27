@@ -1,3 +1,9 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
-Which CIA property does tampering violate?
+Which CIA property does info disclosure violate?
 What additional security mechanisms can you incorporate?
+
+The vulnerability in the insecure version is that raw user input is being put directly into the server. This leads to injection attacks where code can be put directly in the get request URL, leading to unexpected queries being called! 
+
+The secure version sanitizes the user input to make sure that you cannot append code to the get request.
+
+This violates Confidentiality and Accessibility. The secrets and are not secret and are being given to people who should not be reading them.
