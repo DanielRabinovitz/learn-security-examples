@@ -1,2 +1,6 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+The vulnerability is that the use can directly pass in an id input that can crash the server by triggering an error. The secure version uses a try/catch block to keep the server from crashing on an error related to the id. 
+
+A way to prevent this better is to have an error handler that informs of the user of an invalid input while preventing the input from reaching the backend.

@@ -1,2 +1,8 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+There are no log files! None! We only have the parsed json from the form. 
+
+We add logs in the secure version using a middleware function. 
+
+We can make this stronger by adding strong access controls to the logs.

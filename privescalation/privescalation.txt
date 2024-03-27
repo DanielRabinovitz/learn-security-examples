@@ -1,0 +1,5 @@
+This is vulnerable to priviledge escalation because the POST request to update a user is available as a POST request to any user.
+
+We fix this by increasing authentication methods and intercepting the POST request to make sure there's no spoofing, and that there's a valid session and user performing the action.
+
+We can further fix this by protecting our session id through making the cookie http-only.
